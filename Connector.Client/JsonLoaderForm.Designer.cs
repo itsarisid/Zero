@@ -69,15 +69,15 @@
             lblRequetBodyType = new Label();
             tabControlReq = new TabControl();
             tabReqHeadersPage = new TabPage();
-            dataGridView1 = new DataGridView();
+            dataReqGridViewHeader = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             tabReqQueryParametersPage = new TabPage();
-            dataGridView2 = new DataGridView();
+            dataReqGridViewQueryParameters = new DataGridView();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             tabReqBodyPage = new TabPage();
-            richTextBox1 = new RichTextBox();
+            rtxReqBody = new RichTextBox();
             tabReqPageOutput = new TabPage();
             cmbReqMethod = new ComboBox();
             txtNextUrl = new TextBox();
@@ -87,6 +87,8 @@
             lblResourceUrl = new Label();
             txtBaseUrl = new TextBox();
             lblBaseUrl = new Label();
+            trOutput = new TreeView();
+            trReqOutput = new TreeView();
             tabControlMain.SuspendLayout();
             tabPageAuth.SuspendLayout();
             tabControl.SuspendLayout();
@@ -95,15 +97,17 @@
             tabQueryParametersPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewQueryParameters).BeginInit();
             tabBodyPage.SuspendLayout();
+            tabPageOutput.SuspendLayout();
             groupBox1.SuspendLayout();
             tabPageRequest.SuspendLayout();
             groupBox2.SuspendLayout();
             tabControlReq.SuspendLayout();
             tabReqHeadersPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataReqGridViewHeader).BeginInit();
             tabReqQueryParametersPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataReqGridViewQueryParameters).BeginInit();
             tabReqBodyPage.SuspendLayout();
+            tabReqPageOutput.SuspendLayout();
             SuspendLayout();
             // 
             // txtName
@@ -268,6 +272,7 @@
             // 
             // tabPageOutput
             // 
+            tabPageOutput.Controls.Add(trOutput);
             tabPageOutput.Location = new Point(4, 24);
             tabPageOutput.Name = "tabPageOutput";
             tabPageOutput.Size = new Size(572, 337);
@@ -501,7 +506,7 @@
             // 
             // tabReqHeadersPage
             // 
-            tabReqHeadersPage.Controls.Add(dataGridView1);
+            tabReqHeadersPage.Controls.Add(dataReqGridViewHeader);
             tabReqHeadersPage.Location = new Point(4, 24);
             tabReqHeadersPage.Name = "tabReqHeadersPage";
             tabReqHeadersPage.Padding = new Padding(3);
@@ -510,16 +515,16 @@
             tabReqHeadersPage.Text = "Headers";
             tabReqHeadersPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataReqGridViewHeader
             // 
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
-            dataGridView1.Location = new Point(6, 7);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(545, 324);
-            dataGridView1.TabIndex = 0;
+            dataReqGridViewHeader.AllowUserToOrderColumns = true;
+            dataReqGridViewHeader.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataReqGridViewHeader.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
+            dataReqGridViewHeader.Location = new Point(6, 7);
+            dataReqGridViewHeader.Name = "dataReqGridViewHeader";
+            dataReqGridViewHeader.RowTemplate.Height = 25;
+            dataReqGridViewHeader.Size = new Size(545, 324);
+            dataReqGridViewHeader.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -535,7 +540,7 @@
             // 
             // tabReqQueryParametersPage
             // 
-            tabReqQueryParametersPage.Controls.Add(dataGridView2);
+            tabReqQueryParametersPage.Controls.Add(dataReqGridViewQueryParameters);
             tabReqQueryParametersPage.Location = new Point(4, 24);
             tabReqQueryParametersPage.Name = "tabReqQueryParametersPage";
             tabReqQueryParametersPage.Padding = new Padding(3);
@@ -544,16 +549,16 @@
             tabReqQueryParametersPage.Text = "Query Parameters";
             tabReqQueryParametersPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dataReqGridViewQueryParameters
             // 
-            dataGridView2.AllowUserToOrderColumns = true;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView2.Location = new Point(7, 7);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(541, 324);
-            dataGridView2.TabIndex = 1;
+            dataReqGridViewQueryParameters.AllowUserToOrderColumns = true;
+            dataReqGridViewQueryParameters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataReqGridViewQueryParameters.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
+            dataReqGridViewQueryParameters.Location = new Point(7, 7);
+            dataReqGridViewQueryParameters.Name = "dataReqGridViewQueryParameters";
+            dataReqGridViewQueryParameters.RowTemplate.Height = 25;
+            dataReqGridViewQueryParameters.Size = new Size(541, 324);
+            dataReqGridViewQueryParameters.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -569,7 +574,7 @@
             // 
             // tabReqBodyPage
             // 
-            tabReqBodyPage.Controls.Add(richTextBox1);
+            tabReqBodyPage.Controls.Add(rtxReqBody);
             tabReqBodyPage.Location = new Point(4, 24);
             tabReqBodyPage.Name = "tabReqBodyPage";
             tabReqBodyPage.Size = new Size(554, 337);
@@ -577,16 +582,17 @@
             tabReqBodyPage.Text = "Body";
             tabReqBodyPage.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // rtxReqBody
             // 
-            richTextBox1.Location = new Point(1, 2);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(550, 332);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            rtxReqBody.Location = new Point(1, 2);
+            rtxReqBody.Name = "rtxReqBody";
+            rtxReqBody.Size = new Size(550, 332);
+            rtxReqBody.TabIndex = 0;
+            rtxReqBody.Text = "";
             // 
             // tabReqPageOutput
             // 
+            tabReqPageOutput.Controls.Add(trReqOutput);
             tabReqPageOutput.Location = new Point(4, 24);
             tabReqPageOutput.Name = "tabReqPageOutput";
             tabReqPageOutput.Size = new Size(554, 337);
@@ -662,6 +668,20 @@
             lblBaseUrl.TabIndex = 14;
             lblBaseUrl.Text = "Base URL";
             // 
+            // trOutput
+            // 
+            trOutput.Location = new Point(2, 5);
+            trOutput.Name = "trOutput";
+            trOutput.Size = new Size(569, 331);
+            trOutput.TabIndex = 0;
+            // 
+            // trReqOutput
+            // 
+            trReqOutput.Location = new Point(4, 4);
+            trReqOutput.Name = "trReqOutput";
+            trReqOutput.Size = new Size(546, 331);
+            trReqOutput.TabIndex = 0;
+            // 
             // JsonLoaderForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -680,6 +700,7 @@
             tabQueryParametersPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewQueryParameters).EndInit();
             tabBodyPage.ResumeLayout(false);
+            tabPageOutput.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             tabPageRequest.ResumeLayout(false);
@@ -687,10 +708,11 @@
             groupBox2.PerformLayout();
             tabControlReq.ResumeLayout(false);
             tabReqHeadersPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataReqGridViewHeader).EndInit();
             tabReqQueryParametersPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataReqGridViewQueryParameters).EndInit();
             tabReqBodyPage.ResumeLayout(false);
+            tabReqPageOutput.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -735,15 +757,15 @@
         private Label lblRequetBodyType;
         private TabControl tabControlReq;
         private TabPage tabReqHeadersPage;
-        private DataGridView dataGridView1;
+        private DataGridView dataReqGridViewHeader;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private TabPage tabReqQueryParametersPage;
-        private DataGridView dataGridView2;
+        private DataGridView dataReqGridViewQueryParameters;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private TabPage tabReqBodyPage;
-        private RichTextBox richTextBox1;
+        private RichTextBox rtxReqBody;
         private ComboBox cmbReqMethod;
         private TextBox txtNextUrl;
         private Label lblReqMethod;
@@ -756,5 +778,7 @@
         private TabPage tabReqPageOutput;
         private Button btnReqValidate;
         private Button btnReqSave;
+        private TreeView trOutput;
+        private TreeView trReqOutput;
     }
 }

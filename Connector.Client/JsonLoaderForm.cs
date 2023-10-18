@@ -33,6 +33,37 @@ namespace Connector.Client
             btnSave.Enabled = false;
         }
 
+        private ApiDetail GetApiDetail() => new ApiDetail
+        {
+            Name = txtName.Text,
+            AuthUrl = txtAuthUrl.Text,
+            Method = cmbMethod.SelectedValue.ToString(),
+            AuthType = cmbAuthType.SelectedValue.ToString(),
+            ConsumerKey = txtKey.Text,
+            ConsumerSecret = txtSecret.Text,
+            UserName = txtKey.Text,
+            Password = txtSecret.Text,
+            OauthToken = txtKey.Text,
+            OauthTokenSecret = txtSecret.Text,
+            Token = txtToken.Text,
+            Apikey = txtToken.Text,
+            CreatedDate = DateTime.Now,
+            IsActive = true,
+        };
+
+        private ApiRequest GetApiRequest() => new ApiRequest
+        {
+            BaseUrl = txtBaseUrl.Text,
+            ResourceUrl = txtResourceUrl.Text,
+            NextUrl = txtNextUrl.Text,
+            Body = rtxBody.Text,
+            ContentType = cmbRequestBodyType.SelectedValue.ToString(),
+            Headers = dataGridViewHeader.Rows.ConvertToHeader(),
+            QueryParameters = dataGridViewQueryParameters.Rows.ConvertToQueryParameters(),
+            CreatedDate = DateTime.Now,
+            IsActive = true,
+        };
+
         private void btnAuthGo_Click(object sender, EventArgs e)
         {
 
