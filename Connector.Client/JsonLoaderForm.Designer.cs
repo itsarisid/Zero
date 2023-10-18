@@ -63,6 +63,8 @@
             lblMethod = new Label();
             tabPageRequest = new TabPage();
             groupBox2 = new GroupBox();
+            btnReqValidate = new Button();
+            btnReqSave = new Button();
             cmbRequestBodyType = new ComboBox();
             lblRequetBodyType = new Label();
             tabControlReq = new TabControl();
@@ -76,6 +78,7 @@
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             tabReqBodyPage = new TabPage();
             richTextBox1 = new RichTextBox();
+            tabReqPageOutput = new TabPage();
             cmbReqMethod = new ComboBox();
             txtNextUrl = new TextBox();
             lblReqMethod = new Label();
@@ -84,9 +87,6 @@
             lblResourceUrl = new Label();
             txtBaseUrl = new TextBox();
             lblBaseUrl = new Label();
-            tabReqPageOutput = new TabPage();
-            button1 = new Button();
-            button2 = new Button();
             tabControlMain.SuspendLayout();
             tabPageAuth.SuspendLayout();
             tabControl.SuspendLayout();
@@ -155,6 +155,7 @@
             btnAuthGo.TabIndex = 30;
             btnAuthGo.Text = "Validate";
             btnAuthGo.UseVisualStyleBackColor = true;
+            btnAuthGo.Click += btnAuthGo_Click;
             // 
             // btnSave
             // 
@@ -313,7 +314,6 @@
             lblContentType.Size = new Size(79, 15);
             lblContentType.TabIndex = 14;
             lblContentType.Text = "Content-Type";
-            lblContentType.Click += lblContentType_Click;
             // 
             // lblToken
             // 
@@ -430,8 +430,8 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button1);
-            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(btnReqValidate);
+            groupBox2.Controls.Add(btnReqSave);
             groupBox2.Controls.Add(cmbRequestBodyType);
             groupBox2.Controls.Add(lblRequetBodyType);
             groupBox2.Controls.Add(tabControlReq);
@@ -449,6 +449,24 @@
             groupBox2.TabIndex = 29;
             groupBox2.TabStop = false;
             groupBox2.Text = "Resource";
+            // 
+            // btnReqValidate
+            // 
+            btnReqValidate.Location = new Point(498, 604);
+            btnReqValidate.Name = "btnReqValidate";
+            btnReqValidate.Size = new Size(75, 23);
+            btnReqValidate.TabIndex = 30;
+            btnReqValidate.Text = "Validate";
+            btnReqValidate.UseVisualStyleBackColor = true;
+            // 
+            // btnReqSave
+            // 
+            btnReqSave.Location = new Point(417, 604);
+            btnReqSave.Name = "btnReqSave";
+            btnReqSave.Size = new Size(75, 23);
+            btnReqSave.TabIndex = 31;
+            btnReqSave.Text = "Save";
+            btnReqSave.UseVisualStyleBackColor = true;
             // 
             // cmbRequestBodyType
             // 
@@ -567,6 +585,15 @@
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
             // 
+            // tabReqPageOutput
+            // 
+            tabReqPageOutput.Location = new Point(4, 24);
+            tabReqPageOutput.Name = "tabReqPageOutput";
+            tabReqPageOutput.Size = new Size(554, 337);
+            tabReqPageOutput.TabIndex = 3;
+            tabReqPageOutput.Text = "Output";
+            tabReqPageOutput.UseVisualStyleBackColor = true;
+            // 
             // cmbReqMethod
             // 
             cmbReqMethod.FormattingEnabled = true;
@@ -582,7 +609,6 @@
             txtNextUrl.PlaceholderText = "Next Page URL";
             txtNextUrl.Size = new Size(447, 23);
             txtNextUrl.TabIndex = 21;
-            txtNextUrl.TextChanged += txtNextUrl_TextChanged;
             // 
             // lblReqMethod
             // 
@@ -635,33 +661,6 @@
             lblBaseUrl.Size = new Size(55, 15);
             lblBaseUrl.TabIndex = 14;
             lblBaseUrl.Text = "Base URL";
-            // 
-            // tabReqPageOutput
-            // 
-            tabReqPageOutput.Location = new Point(4, 24);
-            tabReqPageOutput.Name = "tabReqPageOutput";
-            tabReqPageOutput.Size = new Size(554, 337);
-            tabReqPageOutput.TabIndex = 3;
-            tabReqPageOutput.Text = "Output";
-            tabReqPageOutput.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(498, 604);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 30;
-            button1.Text = "Validate";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(417, 604);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 31;
-            button2.Text = "Save";
-            button2.UseVisualStyleBackColor = true;
             // 
             // JsonLoaderForm
             // 
@@ -755,7 +754,7 @@
         private Label lblBaseUrl;
         private TabPage tabPageOutput;
         private TabPage tabReqPageOutput;
-        private Button button1;
-        private Button button2;
+        private Button btnReqValidate;
+        private Button btnReqSave;
     }
 }
