@@ -1,4 +1,4 @@
-﻿using Connector.Entities;
+﻿using Connector.DbEntities;
 using Connector.Repositories;
 using Connector.Services;
 using System;
@@ -39,6 +39,8 @@ namespace Connector.Client
             AuthUrl = txtAuthUrl.Text,
             Method = cmbMethod.SelectedValue.ToString(),
             AuthType = cmbAuthType.SelectedValue.ToString(),
+            //Headers = dataGridViewHeader.Rows.ConvertToHeader(),
+            //QueryParameters = dataGridViewQueryParameters.Rows.ConvertToQueryParameters(),
             ConsumerKey = txtKey.Text,
             ConsumerSecret = txtSecret.Text,
             UserName = txtKey.Text,

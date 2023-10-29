@@ -11,7 +11,7 @@ using Serilog;
 using System.Collections.Concurrent;
 using Connector.APIHelper.APIResponse;
 using System.Collections.Generic;
-using Connector.Entities;
+using Connector.DbEntities;
 using Connector.Services;
 using Connector.Repositories;
 using Azure.Core;
@@ -31,7 +31,7 @@ namespace Connector
         private readonly IService<ApiDetail> apiDetailService;
         private readonly IService<ApiRequest> apiRequestService;
         private readonly IService<Header> apiHeaderService;
-        private readonly IService<Entities.QueryParameter> apiQueryService;
+        private readonly IService<DbEntities.QueryParameter> apiQueryService;
         private AppSettings? settings;
 
         public AppConnector(AppSettings? _settings)
@@ -41,7 +41,7 @@ namespace Connector
             apiDetailService = new Service<ApiDetail>(new Repository<ApiDetail>());
             apiRequestService = new Service<ApiRequest>(new Repository<ApiRequest>());
             apiHeaderService = new Service<Header>(new Repository<Header>());
-            apiQueryService = new Service<Entities.QueryParameter>(new Repository<Entities.QueryParameter>());
+            apiQueryService = new Service<DbEntities.QueryParameter>(new Repository<DbEntities.QueryParameter>());
         }
         /// <summary>Main program runner</summary>
         /// <exception cref="System.ArgumentNullException">BaseUrl</exception>
@@ -112,7 +112,7 @@ namespace Connector
                     RestApiExecutor apiExecutor = new();
 
                     var headers = Utility.ConvertToKeyValue<Header>(request.Headers);
-                    var parameters = Utility.ConvertToKeyValue<Entities.QueryParameter>(request.QueryParameters);
+                    var parameters = Utility.ConvertToKeyValue<DbEntities.QueryParameter>(request.QueryParameters);
 
                     var requestModel = new RequestModel
                     {

@@ -1,5 +1,5 @@
 
-using Connector.Entities;
+using Connector.DbEntities;
 using Connector.Models;
 using Connector.Repositories;
 using Connector.Services;
@@ -120,5 +120,11 @@ namespace Connector.Client
         {
             //TODO Call to run All Request.
         }
+
+        private void dataGridViewHeader_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using Connector.Entities;
+﻿using Connector.DbEntities;
 using RestSharp;
 
 namespace Connector.Models
@@ -38,6 +38,6 @@ namespace Connector.Models
         public ApiDetail ApiDetail { get; set; }
         public ApiRequest ApiRequest { get; set; }
         public List<Header> Headers { get; set; }
-        public List<Entities.QueryParameter> QueryParameters { get; set; }
+        public List<DbEntities.QueryParameter> QueryParameters { get; set; }
     }
 }

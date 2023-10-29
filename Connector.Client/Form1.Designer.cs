@@ -65,9 +65,7 @@
             Key = new DataGridViewTextBoxColumn();
             Value = new DataGridViewTextBoxColumn();
             tabReqQueryParametersPage = new TabPage();
-            dataGridViewQueryParameters = new DataGridView();
-            QKey = new DataGridViewTextBoxColumn();
-            QValue = new DataGridViewTextBoxColumn();
+            dataGridView1 = new DataGridView();
             tabReqBodyPage = new TabPage();
             rtxBody = new RichTextBox();
             cmbReqMethod = new ComboBox();
@@ -79,7 +77,7 @@
             tabReqHeadersPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewHeader).BeginInit();
             tabReqQueryParametersPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewQueryParameters).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabReqBodyPage.SuspendLayout();
             SuspendLayout();
             // 
@@ -409,8 +407,9 @@
             dataGridViewHeader.Location = new Point(6, 7);
             dataGridViewHeader.Name = "dataGridViewHeader";
             dataGridViewHeader.RowTemplate.Height = 25;
-            dataGridViewHeader.Size = new Size(440, 375);
+            dataGridViewHeader.Size = new Size(440, 327);
             dataGridViewHeader.TabIndex = 0;
+            dataGridViewHeader.CellContentClick += dataGridViewHeader_CellContentClick;
             // 
             // Key
             // 
@@ -426,7 +425,7 @@
             // 
             // tabReqQueryParametersPage
             // 
-            tabReqQueryParametersPage.Controls.Add(dataGridViewQueryParameters);
+            tabReqQueryParametersPage.Controls.Add(dataGridView1);
             tabReqQueryParametersPage.Location = new Point(4, 24);
             tabReqQueryParametersPage.Name = "tabReqQueryParametersPage";
             tabReqQueryParametersPage.Padding = new Padding(3);
@@ -435,28 +434,13 @@
             tabReqQueryParametersPage.Text = "Query Parameters";
             tabReqQueryParametersPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewQueryParameters
+            // dataGridView1
             // 
-            dataGridViewQueryParameters.AllowUserToOrderColumns = true;
-            dataGridViewQueryParameters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewQueryParameters.Columns.AddRange(new DataGridViewColumn[] { QKey, QValue });
-            dataGridViewQueryParameters.Location = new Point(7, 7);
-            dataGridViewQueryParameters.Name = "dataGridViewQueryParameters";
-            dataGridViewQueryParameters.RowTemplate.Height = 25;
-            dataGridViewQueryParameters.Size = new Size(440, 375);
-            dataGridViewQueryParameters.TabIndex = 1;
-            // 
-            // QKey
-            // 
-            QKey.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            QKey.HeaderText = "Key";
-            QKey.Name = "QKey";
-            // 
-            // QValue
-            // 
-            QValue.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            QValue.HeaderText = "Value";
-            QValue.Name = "QValue";
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(451, 334);
+            dataGridView1.TabIndex = 0;
             // 
             // tabReqBodyPage
             // 
@@ -529,7 +513,7 @@
             tabReqHeadersPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewHeader).EndInit();
             tabReqQueryParametersPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridViewQueryParameters).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabReqBodyPage.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -570,17 +554,15 @@
         private DataGridView dataGridViewHeader;
         private DataGridViewTextBoxColumn Key;
         private DataGridViewTextBoxColumn Value;
-        private DataGridView dataGridViewQueryParameters;
         private ComboBox cmbContentType;
         private Label lblContentType;
         private TabPage tabReqBodyPage;
         private RichTextBox rtxBody;
         private Button btnRun;
-        private DataGridViewTextBoxColumn QKey;
-        private DataGridViewTextBoxColumn QValue;
         private ComboBox cmbReqMethod;
         private Label lblReqMethod;
         private ComboBox cmbRequestBodyType;
         private Label lblRequetBodyType;
+        private DataGridView dataGridView1;
     }
 }

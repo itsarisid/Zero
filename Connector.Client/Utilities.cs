@@ -9,7 +9,7 @@ using Connector.Models;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Diagnostics;
-using Connector.Entities;
+using Connector.DbEntities;
 
 namespace Connector.Client
 {
